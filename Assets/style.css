@@ -1,0 +1,38 @@
+body {
+    background-color: #b8f7cb;
+}
+
+main {
+    display: flex;
+    /* flex-flow: row wrap; */
+    /* justify-content: space-around; */
+}
+
+.navbar {
+    background-color: #005312;
+    color: white;
+}
+
+.form-label {
+    font-size: 24px;
+}
+
+.search-container {
+    margin: 10px;
+}
+
+.card-body {
+    background-color: #005312;
+    color: white;
+    margin: 10px;
+}
+
+#search-button {
+    background-color: blue;
+    color: white;
+}
+
+#input-help {
+    font-size: 16px;
+    color: black;
+}
