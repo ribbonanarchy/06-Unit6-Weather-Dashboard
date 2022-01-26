@@ -9,7 +9,7 @@ var humidElement = document.querySelector("#humidity");
 var uviElement = document.querySelector("#uvi");
 
 var locationURL, city, lat, lon, weatherURL;
-var temp, wind, humidity, uv;
+var temp, wind, humidity, uv, dateToday;
 searchButton.addEventListener('click', getAPI);
 
 function getAPI() {
@@ -32,18 +32,31 @@ function getAPI() {
         })
         .then(function(data) {
             console.log(data);
+            dateToday = moment().format('MM/DD/YYYY');
             temp = data.current.temp;
             wind = data.current.wind_speed;
             humidity = data.current.humidity;
             uv = data.current.uvi;
 
-            cityNameElement.textContent = city;
+            cityNameElement.textContent = city + ' ' + dateToday;
             tempElement.textContent = temp;
             windElement.textContent = wind;
             humidElement.textContent = humidity;
             uviElement.textContent = uv;
 
+            for(var i=1; i<6; i++) {
+                var foreDate = document.querySelector('#date'+i);
+                var foreTemp = document.querySelector('#temperature'+i);
+                var foreWind = document.querySelector('#wind'+i);
+                var foreHumid = document.querySelector('#humidity'+i);
+                var foreUVI = document.querySelector('#uvi'+i);
 
+                foreDate.textContent = moment().add(i, 'days').calendar();
+                foreTemp.textContent = data.daily[i-1].temp.day;
+                foreWind.textContent = data.daily[i-1].wind_speed;
+                foreHumid.textContent = data.daily[i-1].humidity;
+                foreUVI.textContent = data.daily[i-1].uvi;
+            }
         })
     })
 }
