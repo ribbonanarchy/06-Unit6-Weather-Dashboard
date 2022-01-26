@@ -2,9 +2,9 @@
 
 ---
 
-Title: Weather Dashboard
-Developer: Robyn Arnecke
-Published: GitHub 
+Title: Weather Dashboard   
+Developer: Robyn Arnecke   
+Published: GitHub https://ribbonanarchy.github.io/06-Unit6-Weather-Dashboard/
 
 ---
 
